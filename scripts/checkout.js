@@ -1,6 +1,6 @@
 import {cart , removeFromCart} from '../data/cart.js';
 import {products} from '../data/products.js';
-import {formatCurrency} from './utils/money.js';
+import { formatCurrency } from './utils/money.js';
 
 let cartSummaryHTML = '';
 
@@ -31,7 +31,7 @@ cart.forEach((cartItem)=>{
                         ${matchingProduct.name}
                     </div>
                     <div class="product-price">
-                        $${matchingProduct.priceCents / 100}
+                        $${formatCurrency(matchingProduct.priceCents)} 
                     </div>
                     <div class="product-quantity">
                         <span>
@@ -40,7 +40,7 @@ cart.forEach((cartItem)=>{
                         <span class="update-quantity-link link-primary">
                         Update
                         </span>
-                        <span class="delete-quantity-link link-primary js-delete-link
+                        <span class="delete-quantity-link link-primary js-delete-link"
                             data-product-id = "${matchingProduct.id}">
                         Delete
                         </span>
