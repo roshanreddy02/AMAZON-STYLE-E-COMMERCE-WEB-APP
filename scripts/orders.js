@@ -80,6 +80,8 @@ async function loadPage() {
     });
     return productsListHTML;
   }
+  document.querySelector('.js-orders-grid').innerHTML = ordersHTML;
+  
   document.querySelectorAll('.js-buy-again').forEach((button) => {
     button.addEventListener('click', () => {
       addToCart(button.dataset.productId);
